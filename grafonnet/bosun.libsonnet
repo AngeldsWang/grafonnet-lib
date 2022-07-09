@@ -21,5 +21,6 @@
     [if hide != null then 'hide']: hide,
     expr: expr,
     expandHelper: expandHelper,
+    target: 'Bosun Query',
   },
 }
