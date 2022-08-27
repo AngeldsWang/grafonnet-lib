@@ -9,6 +9,7 @@
       "isCounter": false,
       "metric": "sys.cpu.system",
       "shouldComputeRate": false,
+      "shouldComputeTopK": false,
       "tags": {
          "dc": "us-west-01",
          "host": "web0*"
@@ -23,6 +24,7 @@
       "isCounter": false,
       "metric": "sys.cpu.system",
       "shouldComputeRate": false,
+      "shouldComputeTopK": false,
       "tags": { }
    },
    "rate": {
@@ -47,6 +49,7 @@
       "isCounter": true,
       "metric": "sys.cpu.system.brust",
       "shouldComputeRate": true,
+      "shouldComputeTopK": false,
       "tags": { }
    },
    "topk": {
@@ -72,6 +75,9 @@
       "metric": "sys.cpu.system.brust",
       "shouldComputeRate": true,
       "shouldComputeTopK": true,
-      "tags": { }
+      "tags": { },
+      "topKOption": "sum",
+      "topKType": "top",
+      "topKValue": 20
    }
 }
