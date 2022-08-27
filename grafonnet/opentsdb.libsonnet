@@ -64,9 +64,9 @@
 
     shouldComputeRate: shouldComputeRate,
     isCounter: isCounter,
-    [if shouldComputeTopK then 'shouldComputeTopK']: shouldComputeTopK,
-    [if std.objectHas(self, 'shouldComputeTopK') && self.shouldComputeTopK then 'topKType']: [if topKType != null then topKType else 'top'],
-    [if std.objectHas(self, 'shouldComputeTopK') && self.shouldComputeTopK then 'topKOption']: [if topKOption != null then topKOption else 'avg'],
-    [if std.objectHas(self, 'shouldComputeTopK') && self.shouldComputeTopK then 'topKValue']: [if topKValue != null then topKValue else 10],
+    shouldComputeTopK: shouldComputeTopK,
+    [if shouldComputeTopK then 'topKType']: if topKType != null then topKType else 'top',
+    [if shouldComputeTopK then 'topKOption']: if topKOption != null then topKOption else 'avg',
+    [if shouldComputeTopK then 'topKValue']: if topKValue != null then topKValue else 10,
   },
 }
