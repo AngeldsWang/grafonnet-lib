@@ -86,4 +86,6 @@ local graphPanel = grafana.graphPanel;
   ]),
   axis_decimals: graphPanel.new('Axis decimals', decimals=2, decimalsY1=1),
   staircase_line: graphPanel.new('Staircase line', staircase=true),
+  transformations: graphPanel.new('With Transformations', span=12)
+                   .addTransformation({ id: 'renameByRegex', options: { regex: @'([^\.]+)\..+', renamePattern: '$1' } }),
 }
