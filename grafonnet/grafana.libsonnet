@@ -32,4 +32,5 @@
   barGaugePanel:: import 'bar_gauge_panel.libsonnet',
   statPanel:: import 'stat_panel.libsonnet',
   transformation:: import 'transformation.libsonnet',
+  datalink:: import 'datalink.libsonnet',
 }
