@@ -80,8 +80,8 @@ local graphPanel = grafana.graphPanel;
          .addLink('foolinks')
          .addLink('barlinks'),
   datalinks: graphPanel.new('with data links', span=12)
-             .addDataLink({ targetBlank: true, title: 'datalink1', url: 'dataurl1' })
-             .addDataLink({ targetBlank: true, title: 'datalink2', url: 'dataurl2' }),
+             .addDataLink(grafana.datalink.new(title='datalink1', url='dataurl1',))
+             .addDataLink(grafana.datalink.new(title='datalink2', url='dataurl2',)),
   multipleLinks: graphPanel.new('Multiple Links', span=12)
                  .addLinks([
     { title: 'foo', url: 'link' },
