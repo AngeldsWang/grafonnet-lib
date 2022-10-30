@@ -68,6 +68,8 @@
    * @method addAlert(alert) Adds an alert
    * @method addLink(link) Adds a [panel link](https://grafana.com/docs/grafana/latest/linking/panel-links/)
    * @method addLinks(links) Adds an array of links.
+   * @method addDataLink(link) Adds a [data link](https://grafana.com/docs/grafana/latest/panels-visualizations/configure-data-links/)
+   * @method addDataLinks(links) Adds an array of data links.
    * @method addTransformation(transformation) Adds a transformation object
    * @method addTransformations(transformations) Adds an array of transformations
    */
@@ -297,6 +299,10 @@
       links+: [link],
     },
     addLinks(links):: std.foldl(function(p, t) p.addLink(t), links, self),
+    addDataLink(link):: self {
+      fieldConfig+: { defaults+: { links+: [link] } },
+    },
+    addDataLinks(links):: std.foldl(function(p, l) p.addDataLink(l), links, self),
     addOverride(
       matcher=null,
       properties=null,
