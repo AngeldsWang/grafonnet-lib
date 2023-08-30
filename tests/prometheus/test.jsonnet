@@ -16,4 +16,14 @@ local prometheus = grafana.prometheus;
     'heatmap',
     format='heatmap',
   ),
+  alias: prometheus.target(
+    'apache_up',
+    datasource='prom1',
+    instant=true,
+    intervalFactor=1,
+    interval='1m',
+    alias='{{instance}}',
+    legendFormat='',
+    hide=true,
+  ),
 }
